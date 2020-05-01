@@ -31,7 +31,7 @@ SimpleExecutor：简易执行器，默认配置
    插件的初始化是在加载核心配置文件的时候完成的，其被保存在一个list集合中。之后使用责任链模式为四大对象生成代理对象并返回，                        当代理对象调用方法时就会进入invoke()方法中，在invoke方法中，如果存在签名的拦截方法，这时就会调用插件的intercept()
    
 自定义插件：
-  
+```bash
    @Intercepts({
         @Signature(type= StatementHandler.class,
                   method = "prepare",
@@ -65,4 +65,4 @@ public class MyPlugin implements Interceptor {
         System.out.println("获取到的配置文件的参数是："+properties);
     }
 }   
-
+```
